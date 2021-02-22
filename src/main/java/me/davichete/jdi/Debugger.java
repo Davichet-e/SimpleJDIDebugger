@@ -171,7 +171,7 @@ public class Debugger {
             System.out.println("Breakpoint not found");
     }
 
-    public void foo(Event event, Scanner sc, VirtualMachine vm) throws Exception {
+    public void handle(Event event, Scanner sc, VirtualMachine vm) throws Exception {
         System.out.print("Choose\n> ");
         System.out.flush();
 
@@ -240,12 +240,12 @@ public class Debugger {
 
                     else if (event instanceof BreakpointEvent) {
                         event.request().disable();
-                        debuggerInstance.foo(event, sc, vm);
+                        debuggerInstance.handle(event, sc, vm);
                     }
 
                     if (event instanceof StepEvent) {
                         ((StepEvent) event).request().disable();
-                        debuggerInstance.foo(event, sc, vm);
+                        debuggerInstance.handle(event, sc, vm);
                     }
                     vm.resume();
                 }
