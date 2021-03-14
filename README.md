@@ -24,3 +24,5 @@ $ cd src\main\java
 $ javac me\davichete\jdi\*.java
 $ java -cp . me\davichete\jdi\Debugger.java
 ```
+## Note
+Due to changes in Java SE 9 (see [here](https://docs.oracle.com/javase/9/migrate/toc.htm#JSMIG-GUID-A78CC891-701D-4549-AA4E-B8DD90228B4B)) to run this code in Java  <= 1.8, you will need to add `tools.jar` to the classpath.
